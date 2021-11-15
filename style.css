@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: url(./images/Blackjack-background.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.playing__row {
+  display: flex;
+  flex-direction: column;
+}
+
+#player__box, #dealer__box {
+  background: url(./images/blackjack.jpg);
+  height: 250px;
+  width: 250px;
+  opacity: 0.8;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 3.8rem;
+}
+#player__box h2, #dealer__box h2 {
+  color: #efefef;
+  font-size: 1rem;
+}
+
+#blackjack__hit__button {
+  background-color: #f1be51;
+}
+
+#blackjack__stand__button {
+  background-color: #2c415c;
+}
+
+#blackjack__deal__button {
+  background-color: #f15151;
+}
+
+#blackjack__Reset__button {
+  background-color: #0a9b9b;
+}
+
+#blackjack__deal__button,
+#blackjack__hit__button,
+#blackjack__stand__button,
+#blackjack__Reset__button {
+  color: #efefef;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buttons__row {
+  display: flex;
+  margin: 5px;
+  justify-content: center;
+}
+
+.result__row {
+  color: #efefef;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+table, tr, th, td {
+  border: 1px solid #efefef;
+  margin: 5px;
+}
+
+@media (min-width: 768px) {
+  header > img {
+    width: 350px;
+    height: 200px;
+  }
+
+  .playing__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #player__box {
+    margin-right: 5rem;
+  }
+
+  #dealer__box {
+    margin-left: 5rem;
+  }
+
+  #player__box, #dealer__box {
+    width: 700px;
+    height: 400px;
+    display: flex;
+    margin-left: 0rem;
+  }
+  #player__box h2, #dealer__box h2 {
+    font-size: 2rem;
+  }
+
+  #blackjack__deal__button,
+#blackjack__hit__button,
+#blackjack__stand__button,
+#blackjack__Reset__button {
+    margin-top: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .result__row {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+}
