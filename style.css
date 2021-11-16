@@ -87,8 +87,15 @@ table, tr, th, td {
 
 @media (min-width: 768px) {
   header > img {
-    width: 350px;
-    height: 200px;
+    width: 450px;
+    height: 250px;
+  }
+
+  header > span {
+    font-size: 2rem;
+    color: #efefef;
+    display: flex;
+    justify-content: center;
   }
 
   .playing__row {
