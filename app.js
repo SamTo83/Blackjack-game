@@ -1,3 +1,5 @@
+import confetti from "./node_modules/canvas-confetti/dist/confetti.module.mjs";
+
 const hitButton = document.querySelector("#blackjack__hit__button");
 const standButton = document.querySelector("#blackjack__stand__button");
 const dealButton = document.querySelector("#blackjack__deal__button");
@@ -129,6 +131,15 @@ if (PLAYER['score'] <= 21) {
   return winner;
 }
 
+const celebrate = () => {
+  const confettiType = {
+    particleCount: 400,
+    startVelocity: 80,
+    spread: 400,
+  }
+  confetti(confettiType);
+}
+
 const showResult = (winner) => {
 let message, messageColor;
 
@@ -137,6 +148,7 @@ if (blackjackGame['turnsOver'] === true) {
     document.querySelector('#wins').textContent = blackjackGame['wins'];
     message = 'You Won!';
     messageColor = 'white';
+    celebrate();
   } else if (winner === DEALER) {
     document.querySelector('#losses').textContent = blackjackGame['losses'];
     message = 'You Lost!';
