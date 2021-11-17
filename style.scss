@@ -13,14 +13,19 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
-
-.header{
+#blackjack__result{
+  font-size: 1rem;
+  color: $primary-color;
+  display: flex;
+  justify-content: center;
+}
+#header{
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.playing__row{
+#playing__row{
   display: flex;
   flex-direction: column;
 }
@@ -49,9 +54,6 @@ html {
 #blackjack__deal__button{
   background-color: $dealButton-color;
 }
-#blackjack__Reset__button{
-  background-color: $resetButton-color;
-}
 
 #blackjack__deal__button,
 #blackjack__hit__button,
@@ -65,14 +67,14 @@ html {
   cursor: pointer;
 }
 
-.buttons__row{
+#buttons__row{
   display: flex;
   margin: 5px;
   // padding: 10px;
   justify-content: center;
 }
 
-.result__row{
+#result__row{
   color: $primary-color;
   font-size: 1.2rem;
   display: flex;
@@ -89,13 +91,13 @@ table, tr, th, td{
     width: 450px;
     height: 250px;
   }
-  header > span{
+ #blackjack__result{
     font-size: 2rem;
     color: $primary-color;
     display: flex;
     justify-content: center;
   }
-  .playing__row{
+  #playing__row{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -119,11 +121,11 @@ table, tr, th, td{
   #blackjack__hit__button,
   #blackjack__stand__button,
   #blackjack__Reset__button{
-    margin-top: 5rem;
+    margin-top: 2rem;
     font-size: 2rem;
     cursor: pointer;
   }
-  .result__row{
+  #result__row{
     font-size: 2rem;
     margin-top: 3rem;
   }

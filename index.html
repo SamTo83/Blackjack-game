@@ -8,27 +8,37 @@
   <title>Black Jack</title>
 </head>
 <body>
-    <header class="header"><img src="./images/Blackjack-header.jpg" alt="Blackjack logo" width="250" height="130"></header>
-    <h3><span id="blackjack-result">Let's Play</span></h3>
-
-  <div class="playing__row">
-    <div id="player__box">
-      <h2>Player: <span id="player__blackjack__result">0</span></h2>
+    <header id="header"><img src="./images/Blackjack-header.jpg" alt="Blackjack logo" width="250" height="130"></header>
+    <div>
+      <h3><span id="blackjack__result">Let's Play</span></h3>
     </div>
+    
+
+  <div id="playing__row">
+    <div>
+      <div id="player__box">
+        <h2>Player: <span class="player__blackjack__result">0</span></h2>
+        <div id="player__slot"></div>
+      </div>
+      
+    </div>
+    
+
+
 
     <div id="dealer__box">
-      <h2>Dealer: <span id="Dealer__blackjack__result">0</span></h2>
+      <h2>Dealer: <span class="dealer__blackjack__result">0</span></h2>
     </div>
+    <div id="Dealer__slot"></div>
   </div>
 
-  <div class="buttons__row">
+  <div id="buttons__row">
     <button id="blackjack__hit__button">Hit</button>
     <button id="blackjack__stand__button">Stand</button>
     <button id="blackjack__deal__button">Deal</button>
-    <button id="blackjack__Reset__button">Reset</button>
   </div>
 
-  <div class="result__row">
+  <div id="result__row">
     <table>
       <tr>
         <th>Wins</th>
