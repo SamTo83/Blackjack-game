@@ -25,23 +25,21 @@ html {
   align-items: center;
   position: relative;
 }
-#playing__row{
-  display: flex;
-  flex-direction: column;
-}
+
 
 #player__box, #dealer__box{
   background: url(./images/blackjack.jpg);
   height: 250px;
   width: 250px;
   opacity: 0.8;
-  margin-top: 1rem;
   display: flex;
+  margin-top: 1rem;
   justify-content: center;
   margin-left: 3.8rem;
   h2{
     color: $primary-color;
     font-size: 1rem;
+    justify-content: center;
   }
 }
 
@@ -109,12 +107,16 @@ table, tr, th, td{
     margin-left: 5rem;
   }
   #player__box, #dealer__box{
+    // grid-row: 2;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
     width: 700px;
     height: 400px;
-    display: flex;
     margin-left: .0rem;
     h2{
       font-size: 2rem;
+    
     }
   }
 
