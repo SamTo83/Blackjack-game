@@ -1,4 +1,4 @@
-import confetti from "./node_modules/canvas-confetti/dist/confetti.module.mjs";
+// import confetti from "./node_modules/canvas-confetti/dist/confetti.module.mjs";
 
 const hitButton = document.querySelector(".blackjack__hit__button");
 const dealButton = document.querySelector(".blackjack__deal__button");
