@@ -13,13 +13,13 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
-#blackjack__result{
+.blackjack__result{
   font-size: 1rem;
   color: $primary-color;
   display: flex;
   justify-content: center;
 }
-#header{
+.header{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@ html {
 }
 
 
-#player__box, #dealer__box{
+.player__box, .dealer__box{
   background: url(./images/blackjack.jpg);
   height: 250px;
   width: 250px;
@@ -43,20 +43,20 @@ html {
   }
 }
 
-#blackjack__hit__button{
+.blackjack__hit__button{
   background-color: $hitButton-color;
 }
-#blackjack__stand__button{
+.blackjack__stand__button{
   background-color: $standButton-color;
 }
-#blackjack__deal__button{
+.blackjack__deal__button{
   background-color: $dealButton-color;
 }
 
-#blackjack__deal__button,
-#blackjack__hit__button,
-#blackjack__stand__button,
-#blackjack__Reset__button{
+.blackjack__deal__button,
+.blackjack__hit__button,
+.blackjack__stand__button,
+.blackjack__Reset__button{
   color: $primary-color;
   border: none;
   border-radius: 5px;
@@ -65,14 +65,14 @@ html {
   cursor: pointer;
 }
 
-#buttons__row{
+.buttons__row{
   display: flex;
   margin: 5px;
   // padding: 10px;
   justify-content: center;
 }
 
-#result__row{
+.result__row{
   color: $primary-color;
   font-size: 1.2rem;
   display: flex;
@@ -89,24 +89,24 @@ table, tr, th, td{
     width: 450px;
     height: 250px;
   }
- #blackjack__result{
+ .blackjack__result{
     font-size: 2rem;
     color: $primary-color;
     display: flex;
     justify-content: center;
   }
-  #playing__row{
+  .playing__row{
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  #player__box{
+  .player__box{
     margin-right: 5rem;
   }
-  #dealer__box{
+  .dealer__box{
     margin-left: 5rem;
   }
-  #player__box, #dealer__box{
+  .player__box, .dealer__box{
     // grid-row: 2;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -121,15 +121,15 @@ table, tr, th, td{
   }
 
 
-  #blackjack__deal__button,
-  #blackjack__hit__button,
-  #blackjack__stand__button,
-  #blackjack__Reset__button{
+  .blackjack__deal__button,
+  .blackjack__hit__button,
+  .blackjack__stand__button,
+  .blackjack__Reset__button{
     margin-top: 2rem;
     font-size: 2rem;
     cursor: pointer;
   }
-  #result__row{
+  .result__row{
     font-size: 2rem;
     margin-top: 3rem;
   }

@@ -1,16 +1,16 @@
 import confetti from "./node_modules/canvas-confetti/dist/confetti.module.mjs";
 
-const hitButton = document.querySelector("#blackjack__hit__button");
-const standButton = document.querySelector("#blackjack__stand__button");
-const dealButton = document.querySelector("#blackjack__deal__button");
-const playerBox = document.querySelector("#player__box");
-const dealerBox = document.querySelector("#dealer__box");
+const hitButton = document.querySelector(".blackjack__hit__button");
+const standButton = document.querySelector(".blackjack__stand__button");
+const dealButton = document.querySelector(".blackjack__deal__button");
+const playerBox = document.querySelector(".player__box");
+const dealerBox = document.querySelector(".dealer__box");
 
 
 // Create the arrays for the black jack components
 let blackjackGame = {
-  'player': {'scoreSpan' : '#player__blackjack__result', 'div': '#player__slot', 'score': 0},
-  'dealer': {'scoreSpan' : '#dealer__blackjack__result', 'div': '#dealer__slot', 'score': 0},
+  'player': {'scoreSpan' : '.player__blackjack__result', 'div': '.player__slot', 'score': 0},
+  'dealer': {'scoreSpan' : '.dealer__blackjack__result', 'div': '.dealer__slot', 'score': 0},
   'cards': ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'K', 'Q', 'J', 'A'],
   'cardsMap': {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'K': 10, 'Q': 10, 'J': 10, 'A':[1,11]},
   'wins': 0,
@@ -30,12 +30,12 @@ hitButton.addEventListener("click", () => {
     updateScore(card, PLAYER);
     showScore(PLAYER);
   }
-}) 
+});
 // function to receive a random card from the array
 const randomCard = () => {
   let randomIndex = Math.floor(Math.random() * 13);
   return blackjackGame['cards'][randomIndex];
-}
+};
 // function to input card image into the players/dealers slot
 const showCard = (card, activePlayer) => {
   if (activePlayer['score'] <= 21 ){
@@ -43,15 +43,14 @@ const showCard = (card, activePlayer) => {
     cardImage.src = `./images/${card}.png`;
     document.querySelector(activePlayer['div']).appendChild(cardImage);
   }
-}
+};
 
 
-document.querySelector('#blackjack__stand__button').addEventListener('click', dealerLogic);
+document.querySelector('.blackjack__stand__button').addEventListener('click', dealerLogic);
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
-}
-
+};
 async function dealerLogic() {
   blackjackGame['isStand'] = true;
 
@@ -71,8 +70,8 @@ async function dealerLogic() {
 dealButton.addEventListener("click", () => {
   if (blackjackGame['turnsOver'] === true) {
     blackjackGame['isStand'] = false;
-    let playerImages = document.querySelector('#player__box').querySelectorAll('img');
-    let dealerImages = document.querySelector('#dealer__box').querySelectorAll('img');
+    let playerImages = document.querySelector(playerBox).querySelectorAll('img');
+    let dealerImages = document.querySelector(dealerBox).querySelectorAll('img');
     for (let i = 0; i < playerImages.length; i++) {
     playerImages[i].remove();
   }
@@ -81,13 +80,13 @@ dealButton.addEventListener("click", () => {
   }
     PLAYER['score'] = 0;
     DEALER['score'] = 0;
-    document.querySelector('#player__blackjack__result').textContent = 0;
-    document.querySelector('#dealer__blackjack__result').textContent = 0;
-    document.querySelector('#player__blackjack__result').style.color = '#ffffff';
-    document.querySelector('#dealer__blackjack__result').style.color = '#ffffff';
+    document.querySelector('.player__blackjack__result').textContent = 0;
+    document.querySelector('.dealer__blackjack__result').textContent = 0;
+    document.querySelector('.player__blackjack__result').style.color = '#ffffff';
+    document.querySelector('.dealer__blackjack__result').style.color = '#ffffff';
     blackjackGame['turnsOver'] = true;
 }
-})
+});
 
 // update the score on the players/dealers score slot
 const updateScore = (card, activePlayer) => {
@@ -100,7 +99,7 @@ const updateScore = (card, activePlayer) => {
     } else {
       activePlayer['score'] += blackjackGame['cardsMap'][card];
     }
-  }
+  };
 
 const showScore = (activePlayer) => {
   if (activePlayer['score'] > 21) {
@@ -109,7 +108,7 @@ const showScore = (activePlayer) => {
   } else {
     document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score'];
 }
-}
+};
 
 // compute winner and return who just won
 // updates the wins, draws and losses. 
@@ -140,7 +139,7 @@ if (PLAYER['score'] <= 21) {
     blackjackGame['draws']++;
   }
   return winner;
-}
+};
 
 const celebrate = () => {
   const confettiType = {
@@ -149,26 +148,26 @@ const celebrate = () => {
     spread: 400,
   }
   confetti(confettiType);
-}
+};
 
 const showResult = (winner) => {
 let message, messageColor;
   if (blackjackGame['turnsOver'] === true) {
     if (winner == PLAYER) {
-    document.querySelector('#wins').textContent = blackjackGame['wins'];
+    document.querySelector('.wins').textContent = blackjackGame['wins'];
     message = 'You Won!';
     messageColor = 'white';
     celebrate();
   } else if (winner === DEALER) {
-    document.querySelector('#loses').textContent = blackjackGame['loses'];
+    document.querySelector('.loses').textContent = blackjackGame['loses'];
     message = 'You Lost!';
     messageColor = 'red';
   } else {
-    document.querySelector('#draws').textContent = blackjackGame['draws'];
+    document.querySelector('.draws').textContent = blackjackGame['draws'];
     message = 'You Drew!';
     messageColor = 'black';
   }
-    document.querySelector('#blackjack__result').textContent = message;
-    document.querySelector('#blackjack__result').style.color = messageColor;
+    document.querySelector('.blackjack__result').textContent = message;
+    document.querySelector('.blackjack__result').style.color = messageColor;
   }
-}
+};
