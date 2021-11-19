@@ -9,15 +9,15 @@ Player needs to get  cards to add up to 21 points or close enough to that number
 
 ## The design  
 ### The game consist of: 
-*A display section for the player and dealer to be able to see their cards. 
-*Player get to go first by clicking on the Hit button, once player is happy with the points, player can click Stand button. 
-*The dealer with deal its cards till it exceed over 16 points. 
-*A table is created to keep score of the games played whether is win, lose or draw.  
+..*A display section for the player and dealer to be able to see their cards. 
+..*Player get to go first by clicking on the Hit button, once player is happy with the points, player can click Stand button. 
+..*The dealer with deal its cards till it exceed over 16 points. 
+..*A table is created to keep score of the games played whether is win, lose or draw.  
 
 ## The code 
 1. The content of the game is assign as a array to track the data needed. 
 
- let blackjackGame = { 
+ ```let blackjackGame = { 
   'player': {'scoreSpan' : '.player__blackjack__result', 'div': '.player__slot', 'score': 0}, 
   'dealer': {'scoreSpan' : '.dealer__blackjack__result', 'div': '.dealer__slot', 'score': 0}, 
   'cards': ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'K', 'Q', 'J', 'A'], 
@@ -28,22 +28,24 @@ Player needs to get  cards to add up to 21 points or close enough to that number
   'isStand': false, 
   'turnsOver': false, 
 }; 
+```
 
 2. To allow the player to get random cards within the deck, a Math.Random was       implemented to the code with another show cards function to display card received.  
 
-const randomCard = () => { 
+```const randomCard = () => { 
   let randomIndex = Math.floor(Math.random() * 13); 
   return blackjackGame['cards'][randomIndex]; 
 }; 
+```
 
-const showCard = (card, activePlayer) => { 
+```const showCard = (card, activePlayer) => { 
   if (activePlayer['score'] <= 21 ){ 
     let cardImage = document.createElement('img'); 
     cardImage.src = `./images/cards/${card}.png`; 
     document.querySelector(activePlayer['div']).appendChild(cardImage); 
   } 
 }; 
-
+```
 3. An if statement was used to define who is the winner during the game. 
 
 const computeWinner = () => { 
