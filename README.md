@@ -9,10 +9,10 @@ Player needs to get  cards to add up to 21 points or close enough to that number
 
 ## The design  
 ### The game consist of: 
-..* A display section for the player and dealer to be able to see their cards. 
-..* Player get to go first by clicking on the Hit button, once player is happy with the points, player can click Stand button. 
-..* The dealer with deal its cards till it exceed over 16 points. 
-..* A table is created to keep score of the games played whether is win, lose or draw.  
+* A display section for the player and dealer to be able to see their cards. 
+* Player get to go first by clicking on the Hit button, once player is happy with the points, player can click Stand button. 
+* The dealer with deal its cards till it exceed over 16 points. 
+* A table is created to keep score of the games played whether is win, lose or draw.  
 
 ## The code 
 1. The content of the game is assign as a array to track the data needed. 
@@ -48,7 +48,7 @@ Player needs to get  cards to add up to 21 points or close enough to that number
 ```
 3. An if statement was used to define who is the winner during the game. 
 
-const computeWinner = () => { 
+```const computeWinner = () => { 
   let winner; 
 if (PLAYER['score'] <= 21) { 
   if (PLAYER['score'] > DEALER['score'] || (DEALER['score'] > 21)) { 
@@ -68,9 +68,9 @@ if (PLAYER['score'] <= 21) {
   } 
   return winner; 
 }; 
-
+```
 4. Using NPM library, was able to add confetti to the game when Player wins the game
-const celebrate = () => {
+```const celebrate = () => {
   const confettiType = {
     particleCount: 400,
     startVelocity: 80,
@@ -78,6 +78,7 @@ const celebrate = () => {
   }
   confetti(confettiType);
 };
+```
 
 ## The issues I had 
 
