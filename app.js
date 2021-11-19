@@ -40,7 +40,7 @@ const randomCard = () => {
 const showCard = (card, activePlayer) => {
   if (activePlayer['score'] <= 21 ){
     let cardImage = document.createElement('img');
-    cardImage.src = `./images/miniCards/${card}.png`;
+    cardImage.src = `./images/cards/${card}.png`;
     document.querySelector(activePlayer['div']).appendChild(cardImage);
   }
 };
@@ -140,7 +140,7 @@ if (PLAYER['score'] <= 21) {
   }
   return winner;
 };
-
+// function to activate confetti if player has won
 const celebrate = () => {
   const confettiType = {
     particleCount: 400,
@@ -149,7 +149,7 @@ const celebrate = () => {
   }
   confetti(confettiType);
 };
-
+// show the final result of the game, whether it's win, lose or draw
 const showResult = (winner) => {
 let message, messageColor;
   if (blackjackGame['turnsOver'] === true) {

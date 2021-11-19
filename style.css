@@ -45,6 +45,7 @@ html {
 
 .blackjack__hit__button {
   background-color: #f1be51;
+  padding: 0 10px 0 10px;
 }
 
 .blackjack__stand__button {
@@ -122,6 +123,10 @@ table, tr, th, td {
   }
   .player__box h2, .dealer__box h2 {
     font-size: 2rem;
+  }
+
+  .blackjack__hit__button {
+    padding: 0 20px 0 20px;
   }
 
   .blackjack__deal__button,

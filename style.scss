@@ -46,6 +46,8 @@ html {
 
 .blackjack__hit__button{
   background-color: $hitButton-color;
+  padding: 0 10px 0 10px;
+
 }
 .blackjack__stand__button{
   background-color: $standButton-color;
@@ -69,7 +71,6 @@ html {
 .buttons__row{
   display: flex;
   margin: 5px;
-  // padding: 10px;
   justify-content: center;
 }
 
@@ -108,7 +109,6 @@ table, tr, th, td{
     margin-left: 5rem;
   }
   .player__box, .dealer__box{
-    // grid-row: 2;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     justify-content: center;
@@ -120,7 +120,9 @@ table, tr, th, td{
     
     }
   }
-
+  .blackjack__hit__button{
+    padding: 0 20px 0 20px;
+   }
 
   .blackjack__deal__button,
   .blackjack__hit__button,
