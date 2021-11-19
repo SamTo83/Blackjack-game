@@ -40,7 +40,7 @@ const randomCard = () => {
 const showCard = (card, activePlayer) => {
   if (activePlayer['score'] <= 21 ){
     let cardImage = document.createElement('img');
-    cardImage.src = `./images/${card}.png`;
+    cardImage.src = `./images/miniCards/${card}.png`;
     document.querySelector(activePlayer['div']).appendChild(cardImage);
   }
 };
@@ -70,8 +70,8 @@ async function dealerLogic() {
 dealButton.addEventListener("click", () => {
   if (blackjackGame['turnsOver'] === true) {
     blackjackGame['isStand'] = false;
-    let playerImages = document.querySelector(playerBox).querySelectorAll('img');
-    let dealerImages = document.querySelector(dealerBox).querySelectorAll('img');
+    let playerImages = (playerBox).querySelectorAll('img');
+    let dealerImages = (dealerBox).querySelectorAll('img');
     for (let i = 0; i < playerImages.length; i++) {
     playerImages[i].remove();
   }
