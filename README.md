@@ -9,10 +9,10 @@ Player needs to get  cards to add up to 21 points or close enough to that number
 
 ## The design  
 ### The game consist of: 
-..*A display section for the player and dealer to be able to see their cards. 
-..*Player get to go first by clicking on the Hit button, once player is happy with the points, player can click Stand button. 
-..*The dealer with deal its cards till it exceed over 16 points. 
-..*A table is created to keep score of the games played whether is win, lose or draw.  
+..* A display section for the player and dealer to be able to see their cards. 
+..* Player get to go first by clicking on the Hit button, once player is happy with the points, player can click Stand button. 
+..* The dealer with deal its cards till it exceed over 16 points. 
+..* A table is created to keep score of the games played whether is win, lose or draw.  
 
 ## The code 
 1. The content of the game is assign as a array to track the data needed. 
