@@ -8,9 +8,6 @@ body{
 
 html { 
     background: url(./images/Blackjack-background.PNG) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 }
 .blackjack__result{
@@ -44,22 +41,22 @@ html {
   }
 }
 
-.blackjack__hit__button{
+.blackjack__hit-button{
   background-color: $hitButton-color;
   padding: 0 10px 0 10px;
 
 }
-.blackjack__stand__button{
+.blackjack__stand-button{
   background-color: $standButton-color;
 }
-.blackjack__deal__button{
+.blackjack__deal-button{
   background-color: $dealButton-color;
 }
 
-.blackjack__deal__button,
-.blackjack__hit__button,
-.blackjack__stand__button,
-.blackjack__Reset__button{
+.blackjack__deal-button,
+.blackjack__hit-button,
+.blackjack__stand-button,
+.blackjack__Reset-button{
   color: $primary-color;
   border: none;
   border-radius: 5px;
@@ -84,6 +81,14 @@ html {
 table, tr, th, td{
   border: 1px solid $primary-color;
   margin: 5px;
+}
+
+.rules{
+  color:$primary-color;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -120,14 +125,14 @@ table, tr, th, td{
     
     }
   }
-  .blackjack__hit__button{
+  .blackjack__hit-button{
     padding: 0 20px 0 20px;
-   }
+  }
 
-  .blackjack__deal__button,
-  .blackjack__hit__button,
-  .blackjack__stand__button,
-  .blackjack__Reset__button{
+  .blackjack__deal-button,
+  .blackjack__hit-button,
+  .blackjack__stand-button,
+  .blackjack__Reset-button{
     margin-top: 2rem;
     font-size: 2rem;
     cursor: pointer;
@@ -135,5 +140,9 @@ table, tr, th, td{
   .result__row{
     font-size: 2rem;
     margin-top: 3rem;
+  }
+  .img > .responsive {
+    width: 160px;
+    height: 250px;
   }
 }
